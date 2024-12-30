@@ -18,10 +18,19 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "@nuxt/icon"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "@nuxt/icon",
+    "@nuxtjs/supabase",
+  ],
 
   alias: {
     components: "@/components",
     stores: "@/stores",
+  },
+
+  supabase: {
+    redirect: false,
   },
 });

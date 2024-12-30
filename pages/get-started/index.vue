@@ -24,18 +24,31 @@ import LandingButton from "components/LandingButton.vue";
     <div
       class="max-w-screen-sm w-full flex flex-wrap md:flex-nowrap md:gap-5 md:justify-evenly p-2 gap-2"
     >
-      <ServiceWidget service="spotify" description="Spotify" />
+      <ServiceWidget
+        service="spotify"
+        description="Spotify"
+        to="/login?provider=spotify"
+      />
 
       <ServiceWidget service="applemusic" description="Apple Music" />
 
-      <ServiceWidget service="discogs" description="Discogs" />
+      <ServiceWidget
+        service="discogs"
+        description="Discogs"
+        to="/login?provider=discogs"
+      />
     </div>
     <div class="w-full flex items-center justify-center p-10">
       <LandingButton
         text="Create An Account"
         class="bg-primary-200 hover:bg-accent-400 transition duration-200"
-        to="/register"
+        to="/#"
       />
     </div>
+    <a
+      href="#"
+      class="text-accent-300 hover:text-text-100 duration-200 font-quicksand text-sm"
+      >learn more about auth & how we use your data »</a
+    >
   </div>
 </template>

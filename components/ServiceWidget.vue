@@ -2,6 +2,7 @@
 const props = defineProps({
   service: String,
   description: String,
+  to: String,
 });
 
 function getIcon(name) {
@@ -28,8 +29,9 @@ const colorClass = serviceColors[props.service];
 </script>
 
 <template>
-  <div
+  <nuxt-link
     class="bg-background-800 hover:bg-primary-300 duration-300 rounded-lg group cursor-pointer w-full"
+    :to="to"
   >
     <div class="flex flex-col items-center justify-center md:p-10 p-5">
       <Icon
@@ -44,5 +46,5 @@ const colorClass = serviceColors[props.service];
         </p>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
