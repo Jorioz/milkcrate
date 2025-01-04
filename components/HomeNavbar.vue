@@ -1,5 +1,6 @@
 <script setup>
 import Hamburger from "components/Hamburger.vue";
+import UserWidget from "@/components/UserWidget.vue";
 import { useHomeStore } from "stores/home";
 
 const homeStore = useHomeStore();
@@ -48,9 +49,10 @@ onBeforeUnmount(() => {
       <div class="hidden md:flex justify-end">
         <LandingButton
           text="get started"
-          class="bg-accent-300 hover:bg-accent-400 transition duratino-200 z-20"
+          class="bg-accent-300 hover:bg-accent-400 transition duration-200 z-20"
           to="/get-started"
         />
+        <UserWidget />
       </div>
 
       <!--Mobile-->

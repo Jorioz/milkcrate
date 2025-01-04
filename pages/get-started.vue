@@ -24,26 +24,26 @@ import LandingButton from "components/LandingButton.vue";
     <div
       class="max-w-screen-sm w-full flex flex-wrap md:flex-nowrap md:gap-5 md:justify-evenly p-2 gap-2"
     >
-      <ServiceWidget
-        service="spotify"
-        description="Spotify"
-        to="/login?provider=spotify"
-      />
-
-      <ServiceWidget service="applemusic" description="Apple Music" />
+      <ServiceWidget service="spotify" description="Spotify" to="/#" />
 
       <ServiceWidget
-        service="discogs"
-        description="Discogs"
-        to="/login?provider=discogs"
+        service="applemusic"
+        description="Apple Music"
+        :enabled="false"
       />
+
+      <ServiceWidget service="discogs" description="Discogs" :enabled="false" />
     </div>
-    <div class="w-full flex items-center justify-center p-10">
+    <div class="w-full flex flex-col items-center justify-center gap-2 p-10">
       <LandingButton
-        text="Create An Account"
+        text="Sign up with email"
         class="bg-primary-200 hover:bg-accent-400 transition duration-200"
-        to="/#"
+        to="/register"
       />
+
+      <NuxtLink to="/login" class="text-secondary-300 hover:text-white"
+        >Login with email</NuxtLink
+      >
     </div>
     <a
       href="#"
