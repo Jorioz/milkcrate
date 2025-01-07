@@ -26,8 +26,7 @@ const handleOtp = (error) => {
     hasCheckedOTP.value = true;
     isValidOTP.value = true;
     setTimeout(() => {
-      // change to handleLogin to create new session and user
-      navigateTo("/");
+      retrieveUser();
     }, 1500);
   }
 };
@@ -42,6 +41,20 @@ const verifyOtp = async () => {
     handleOtp(error);
   } else {
     handleOtp(null);
+  }
+};
+
+const retrieveUser = async () => {
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser();
+  if (error) {
+    // Debug
+    console.log("Error retrieving user");
+  } else if (user) {
+    console.log("User retrieved:", user);
+    navigateTo("/"); // Redirect to the home page
   }
 };
 
